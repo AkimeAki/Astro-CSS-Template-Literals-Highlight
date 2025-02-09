@@ -1,0 +1,28 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"fileTypes": ["astro"],
+	"injectionSelector": ["L:meta.embedded.expression.astro"],
+	"scopeName": "source.astro.css.template",
+	"name": "CSS Template Literals (Astro)",
+	"patterns": [
+		{
+			"include": "#astroCss"
+		}
+	],
+	"repository": {
+		"astroCss": {
+			"patterns": [
+				{
+					"name": "source.css.styled",
+					"begin": "(?<=css`)",
+					"end": "(?=`)",
+					"patterns": [
+						{
+							"include": "source.css.styled"
+						}
+					]
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,74 @@
+{
+	"name": "astro-css-template-literals-highlight",
+	"displayName": "Astro CSS Template Literals Highlight",
+	"description": "CSS syntax highlighting when using CSS template literals (css``) in Astro.",
+	"version": "1.0.0",
+	"engines": {
+		"vscode": "^1.96.4",
+		"node": "20.15.0"
+	},
+	"keywords": [
+		"Astro",
+		"CSS",
+		"Panda CSS"
+	],
+	"icon": "images/icon.png",
+	"categories": [
+		"Programming Languages",
+		"Visualization"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/AkimeAki/Astro-CSS-Template-Literals-Highlight.git"
+	},
+	"publisher": "AkimeAki",
+	"contributes": {
+		"grammars": [
+			{
+				"language": "astro",
+				"scopeName": "source.astro.css.template",
+				"path": "./src/syntaxes/astro-css.tmLanguage.json",
+				"injectTo": [
+					"source.astro"
+				],
+				"embeddedLanguages": {
+					"source.css.styled": "styled"
+				}
+			}
+		]
+	},
+	"extensionDependencies": [
+		"styled-components.vscode-styled-components",
+		"astro-build.astro-vscode"
+	],
+	"scripts": {
+		"vscode:prepublish": "npm run package",
+		"compile": "webpack",
+		"watch": "webpack --watch",
+		"package": "webpack --mode production --devtool hidden-source-map",
+		"pretest": "npm run compile-tests && npm run compile && npm run lint",
+		"format": "prettier --write './**/*'",
+		"lint": "eslint .",
+		"lint:fix": "npm run lint -- --fix && npm run format",
+		"test": "vscode-test",
+		"vscode:package": "vsce package"
+	},
+	"devDependencies": {
+		"@eslint/js": "9.19.0",
+		"@types/mocha": "10.0.7",
+		"@types/node": "20.x",
+		"@types/vscode": "1.91.0",
+		"@vscode/test-cli": "0.0.9",
+		"@vscode/test-electron": "2.4.0",
+		"eslint": "9.19.0",
+		"eslint-config-prettier": "10.0.1",
+		"prettier": "3.4.2",
+		"prettier-plugin-sh": "0.14.0",
+		"ts-loader": "9.5.1",
+		"typescript": "5.4.5",
+		"typescript-eslint": "8.22.0",
+		"vsce": "2.15.0",
+		"webpack": "5.92.1",
+		"webpack-cli": "5.1.4"
+	}
+}
