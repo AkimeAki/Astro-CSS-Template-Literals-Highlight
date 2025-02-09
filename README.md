@@ -30,3 +30,9 @@ None.
 ## License
 
 Released under the [MIT license](https://opensource.org/license/mit)
+
+この拡張機能の一部の機能は、[styled-components](https://styled-components.com/) が公開している [vscode-styled-components](https://marketplace.visualstudio.com/items?itemName=styled-components.vscode-styled-components) のコードを改変して利用しています。
+オリジナルのコードは [GitHub](https://github.com/styled-components/vscode-styled-components) から入手可能であり、[MITライセンス](https://marketplace.visualstudio.com/items/styled-components.vscode-styled-components/license)のもとで公開されています。
+
+Some of the functionality of this extension is based on a modified version of the [vscode-styled-components](https://marketplace.visualstudio.com/items?itemName=styled-components.vscode-styled-components) code published by [styled-components](https://styled-components.com/).
+The original code is available from [GitHub](https://github.com/styled-components/vscode-styled-components) and is released under the [MIT license](https://marketplace.visualstudio.com/items/styled-components.vscode-styled-components/license).
