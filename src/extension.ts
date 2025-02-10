@@ -1,21 +1,23 @@
 import { ExtensionContext, languages, DocumentSelector } from "vscode";
 import { colorProvider } from "./colorProvider";
-import { provideCompletionItems } from "./completionItemProvider";
+import { completionTemplateProvider } from "./completionItemProvider";
+import { completionCssProvider } from "./cssCompletionProvider";
+import { viewSuggest } from "./viewSuggest";
 
 export const documentSelector: DocumentSelector = [{ scheme: "file", language: "astro" }];
 
 export function activate(context: ExtensionContext) {
-	// 入力補完
+	// テンプレートリテラルの入力補完
 	context.subscriptions.push(
-		languages.registerCompletionItemProvider(
-			documentSelector,
-			{
-				provideCompletionItems
-			},
-			"`"
-		)
+		languages.registerCompletionItemProvider(documentSelector, completionTemplateProvider, "`")
 	);
 
 	// カラーパレッド
 	context.subscriptions.push(languages.registerColorProvider(documentSelector, colorProvider));
+
+	// CSSの入力補完
+	context.subscriptions.push(
+		languages.registerCompletionItemProvider(documentSelector, completionCssProvider),
+		viewSuggest
+	);
 }
